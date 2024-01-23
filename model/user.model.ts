@@ -14,7 +14,7 @@ export interface IUser extends Document{
     },
     role:string,
     isVerified:boolean;
-    courses:Array<{courseId:String}>
+    subscription:Array<{courseId:String}>
     comparePassword:(password:string)=>Promise<boolean>
     SignAccesToken:()=>string
     SignRefreshToken:()=>string
@@ -53,7 +53,7 @@ const userSchema:Schema<IUser>=new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    courses:[
+    subscription:[
         {
             courseId:String
         }
